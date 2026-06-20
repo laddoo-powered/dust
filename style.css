@@ -1,0 +1,97 @@
+html, body {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: Georgia, serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: clamp(52px, 7vh, 76px) clamp(12px, 3vw, 28px);
+}
+
+.card {
+  position: relative;
+  width: min(95vw, 1060px);
+  box-sizing: border-box;
+  padding: clamp(18px, 3vw, 30px);
+  border-radius: 16px;
+  background: var(--color-bg-secondary);
+  box-shadow: 4px 6px 12px var(--color-shadow);
+  text-align: center;
+  overflow: hidden;
+}
+
+.decorative-art,
+.placeholder-image {
+  display: block;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.decorative-art {
+  width: 100%;
+  object-fit: contain;
+}
+
+.top-art {
+  max-width: 1000px;
+  margin-bottom: clamp(12px, 2vw, 20px);
+}
+
+.placeholder-image-wrap {
+  position: relative;
+  width: min(100%, 320px);
+  margin: 0 auto;
+}
+
+.placeholder-image {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.placeholder-image-wrap::before {
+  content: "";
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 145%;
+  height: 145%;
+  transform: translate(-50%, -50%);
+  background: url("blob-daub.svg") no-repeat center / contain;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.card h2 {
+  margin: clamp(14px, 2vw, 20px) 0 clamp(16px, 2.4vw, 24px);
+  font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", "Marker Felt", "Bradley Hand", cursive;
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  font-weight: normal;
+  line-height: 1.15;
+}
+
+.bottom-art {
+  max-width: 1000px;
+}
+
+@media (max-width: 560px) {
+  body {
+    align-items: flex-start;
+    padding-top: 58px;
+    padding-bottom: 58px;
+  }
+
+  .card {
+    width: 100%;
+    padding: 18px;
+  }
+}
